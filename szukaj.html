@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Wyszukiwanie danych</title>
+    </head>
+    <body>
+        <h1>Wyszukaj dane</h1>
+        
+        <form action="pobierzrekordy.php" method="post">
+            Wybierz metodę wyszukiwania:<br/>
+            <select name="metoda_szukania">
+                <option value="kurs">Kurs
+                <option value="student">Student
+                <option value="prowadzacy">Prowadzący
+            </select>
+            <br/>
+           Szukaj po wyrażeniach:<br/>
+           <input name="wyrazenie" type="text">
+           <br/>
+           <input type="submit" value="Szukaj">
+        </form>
+    </body>
+</html>
+    
+
