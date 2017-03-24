@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Wprowadzanie danych:</title>
+    </head>
+<body>
+    <h3>Wprowadz dane kursu:</h3>
+<form action='polaczenie_z_baza.php?strona=kurs' method="post">
+    <table>
+        <tr><td>Nazwa kursu</td><td><input name="nazwa_kursu" type="text" placeholder="Nazwa kursu"/></td></tr>
+        <tr><td>Data kursu</td><td><input type="date" name="data_kursu" value=""/></td></tr>
+        <tr><td><input type="submit"/></td></tr>
+    </table>
+</form>
+    <br>
+    <h3>Wprowadz dane prowadzącego:</h3>
+<form action='polaczenie_z_baza.php?strona=prowadzacy' method="post">
+    <table>
+        <tr><td>Imię prowadzacego</td><td><input name="imie_prowadzacy" type="text" placeholder="Imię prowadzącego"/></td></tr>
+        <tr><td>Nazwisko prowadzącego</td><td><input name="nazwisko_prowadzacy" type="text" placeholder="Nazwisko prowadzacego"/></td></tr>
+        <tr><td><input type="submit"/></td></tr>
+    </table>
+</form>
+<br>
+    <h3>Wprowadz dane studenta:</h3>
+<form action='polaczenie_z_baza.php?strona=student' method="post">
+    <table>
+        <tr><td>Imię studenta</td><td><input name="imie_student" type="text" placeholder="Imię studenta"/></td></tr>
+        <tr><td>Nazwisko studenta</td><td><input name="nazwisko_student" type="text" placeholder="Nazwisko studenta"/></td></tr>
+        <tr><td><input type="submit"/></td></tr>
+    </table>
+</form>
+    <!--'polaczenie_z_baza.php?strona=kurs'-->
+</body>
+</html>

@@ -18,32 +18,30 @@
             exit;
         }
         
-    @ $conn = new mysqli("127.0.0.1", "root", "", "certificate");
+     $conn = new mysqli("127.0.0.1", "root", "", "certificate");
 
     if (mysqli_connect_errno()) {
         echo 'Błąd! Spróbuj ponownie.';
         exit;
     }
-    $zapytanie = "select * from kurs where ".$metoda_szukania. " like '%".$wyrazenie."%'"; 
-    $wynik = $conn->query($zapytanie);
     
-    $ile_znalezionych = $wynik->num_rows;
+ //   $zapytanie = "select * from kurs"; 
+ //   $wynik = $conn->query($zapytanie);
     
-    echo '<p>Ilość znalezionych pozycji: ' .$ile_znalezionych. '</p>';
+ //   $ile_znalezionych = $wynik->num_rows;
     
-    for ($i=0; $i <$ile_znalezionych; $i++) {
+ //   echo '<p>Ilość znalezionych pozycji: ' .$ile_znalezionych. '</p>';
+    
+ //   for ($i=0; $i <$ile_znalezionych; $i++) {
        
-        $wiersz = $wynik->fetch_assoc();
-        echo '<p><strong>' . ($i+1) . '. kurs: ';
-        echo stripslashes($wiersz['kurs ']);
-        echo '</strong><br />prowadzacy: ';
-        echo stripslashes($wiersz['prowadzacy']);
-        echo '<br />student: ';
-        echo stripslashes($wiersz['student']);
-        echo '</p>';
-    }
-    $wynik->free();
-    $db->close();
+ //       $wiersz = $wynik->fetch_assoc();
+ //       echo '<p>' . ($i+1) . '. kurs: ';
+ //       echo '<br />prowadzacy: ';
+ //       echo '<br />student: ';
+ //       echo '</p>';
+  //  }
+  //  $wynik->free();
+  //  $db->close();
     
  //       $zapytanie = "select * from kurs;";
         
