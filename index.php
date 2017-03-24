@@ -1,4 +1,4 @@
-<?php
+
 <HTML>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,7 @@
 <div> Hello everybody </div>
 </body>
 </html>
-
+<?php
 if (!$db_link = mysql_connect("127.0.0.1" , "c5magda01" , "utewFKxXQK50@")){
     echo('Wystąpił błąd podczas połączenia z serwerem MySQL...<BR>');
     exit;
