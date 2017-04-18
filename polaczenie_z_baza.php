@@ -1,5 +1,12 @@
+<!DOCTYPE html>
 <html>
     <head>
+         <meta charset="utf-8">
+    </head>
+   
+    <header>
+    <a href="formularz.html"></a>
+    </header>
         <title>Dodanie danych do bazy</title>
     </head>
     <body>
@@ -10,12 +17,12 @@
     @     $conn = new mysqli("127.0.0.1", "root", "", "certificate");
 
         if (mysqli_connect_errno()) {
-            echo 'PoÅ‚Ä…czenie z bazÄ… danych nie udaÅ‚o siÄ™. Klikaj jeszcze raz za chwilÄ™';
+            echo 'Po³¹czenie z baz¹ danych nie uda³o siê. Klikaj jeszcze raz za chwilê';
             exit;
         }
 
         $strona = $_GET['strona'];
-       // var_dump($strona);
+      var_dump($strona);
         
         
 
@@ -26,7 +33,7 @@
             $data = $_POST['data_kursu'];
 
             if (!$kurs || !$data) {
-                echo 'WypeÅ‚nij wszystkie pola. WprowadÅº jeszcze raz';
+                echo 'Wype³nij wszystkie pola. WprowadŸ jeszcze raz';
                 exit;
             }
 
@@ -34,8 +41,6 @@
                 $kurs = addslashes($kurs);
                 $data = addslashes($data);
             }
-
-
 
             $zapytanie = "insert into kurs (nazwa_kursu , data) values ('" . $kurs . "' , '" . $data . "')";
         } 
@@ -46,7 +51,7 @@
             $nazpro = $_POST['nazwisko_prowadzacy'];
 
             if (!$imiepro || !$nazpro) {
-                echo 'WypeÅ‚nij wszystkie pola. WprowadÅº jeszcze raz';
+                echo 'Wype³nij wszystkie pola. WprowadŸ jeszcze raz';
                 exit;
             }
 
@@ -66,7 +71,7 @@
             $nazstu = $_POST['nazwisko_student'];
 
             if (!$imstu || !$nazstu) {
-                echo 'WypeÅ‚nij wszystkie pola. WprowadÅº jeszcze raz';
+                echo 'Wype³nij wszystkie pola. WprowadŸ jeszcze raz';
                 exit;
             }
 
@@ -75,22 +80,15 @@
                 $nazstu = addslashes($nazstu);
             }
 
-
-
             $zapytanie = "insert into prowadzacy (imie , nazwisko) values ('" . $imstu . "' , '" . $nazstu . "')";
         }
-        
 
+           $wynik = $conn->query($zapytanie);
+            if ($wynik) {
+    echo $conn->affected_rows . 'dane zapisane';
+}
 
-
-
-
-
-
-            $wynik = $conn->query($zapytanie);
-            if ($wynik)
-                echo $conn->affected_rows . 'dane zapisane';
-        //  $student =$_POST['dane_student'];
+//  $student =$_POST['dane_student'];
         //   $prowadzacy=$_POST['dane_prowadzacy']; !$student || !$prowadzacy || 
 // '".$student."' , '".$prowadzacy."' , 
         ?>
